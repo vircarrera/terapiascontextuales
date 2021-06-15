@@ -1,0 +1,63 @@
+// vars
+
+.cta{
+  display: inline-block;
+  font-weight: $fw-bold;
+  cursor: pointer;
+  &.cta-button{
+    background: $primary;
+    text-align: center;
+    border-radius: $br-big;
+    padding: $v-unit-s $h-unit-m;
+    color: $white;
+    font-size: $fs-standard;
+    line-height: $lh-standard;
+    transition: background-position 0.3s linear, font-size 0.3s linear;
+    &:hover {
+      background-position-y: -$unit50;
+      font-size: $fs-medium;
+    }
+  }
+
+  &.cta-link{
+    background: $primary;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: $v-unit-xs 0;
+    .ico-flecha-der{
+      @include transition(margin-left 0.3s linear);
+    }
+    &:hover {
+      background: $blue;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      .ico-flecha-der{
+        margin-left: $v-unit-s;
+      }
+    }
+  }
+}
+
+input,
+button {
+  &[type="submit"] {
+    &.cta-submit {
+      //   Poner algo
+      border: 3px solid red;
+    }
+  }
+
+  .b-contact & {
+    &[type="submit"] {
+      &.cta-submit {
+        // poner algo
+
+        &[disabled] {
+          border: 3px solid red;
+        }
+      }
+    }
+  }
+}

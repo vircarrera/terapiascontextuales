@@ -1,0 +1,81 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.page-template-page-personas {
+  .b-team {
+    @include display-flex;
+    @include flex-wrap(wrap);
+    .title-description {
+      .e-subtitle-2 {
+        color: $darkest;
+        @include respond-above(md) {
+          margin-bottom: $v-unit-l;
+        }
+        @include respond-between(sm, md) {
+          margin-bottom: $v-unit-l;
+        }
+        @include respond-below(sm) {
+          margin-bottom: $v-unit-m;
+        }
+      }
+
+      .e-text {
+        color: $darker;
+      }
+
+      @include respond-above(md) {
+        width: 50%;
+        margin-bottom: $v-unit-xl;
+      }
+      @include respond-between(sm, md) {
+        margin-bottom: $v-unit-m;
+      }
+      @include respond-below(sm) {
+        margin-bottom: $v-unit-l;
+      }
+    }
+
+    .e-subtitle-3 {
+      color: $darkest;
+    }
+
+    .loop_taxonomy {
+      @include flex(0, 0, 100%);
+      @include display-flex;
+      @include align-items(flex-start);
+      @include flex-wrap(wrap);
+      margin-top: $v-unit-l;
+      .--team {
+        display: inline-block;
+        margin-bottom: $v-unit-l;
+        @include respond-above(md) {
+          margin-right: $h-unit-l;
+        }
+        @include respond-between(sm, md) {
+          margin-right: $h-unit-l;
+        }
+        @include respond-below(sm) {
+          margin-right: $h-unit;
+        }
+      }
+
+      @include respond-below(md) {
+        @include justify-content(center);
+      }
+    }
+
+    .b-filter__supervisors,
+    .b-filter__embassadors,
+    .b-filter__docents {
+      @include flex(0, 0, 100%);
+      @include respond-above(md) {
+        margin-bottom: $v-unit-m;
+      }
+    }
+  } /*cierra b-team*/
+} /*cierra page-template-page-personas*/

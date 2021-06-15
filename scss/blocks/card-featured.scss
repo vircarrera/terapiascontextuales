@@ -1,0 +1,78 @@
+//
+// Vars
+//
+$min-width: 350px;
+$min-widthxs: 285px;
+$figureheight: 190px;
+$min-heightS: 250px;
+//
+// Styles
+//
+
+.b-card {
+  &.--course {
+    &.featured {
+      min-width: 100%;
+      @include display-flex;
+      margin-bottom: $v-unit-l;
+
+      .figure {
+        height: auto;
+      }
+      .e-content {
+        height: auto;
+        border-top: none;
+        min-height: auto;
+      }
+      .e-price {
+        @include flex-direction-column;
+      }
+
+      @include respond-above(sm) {
+        @include flex-direction-row;
+
+        & > a {
+          @include flex(0, 0, 35%);
+
+          .figure {
+            @include flex(0, 0, 100%);
+            border-radius: $br-thin 0 0 $br-thin;
+            position: relative;
+            height: 100%;
+
+            img {
+              min-width: 100%;
+              min-height: 100%;
+            }
+          }
+        }
+
+        .e-content {
+          border-left: 5px solid $pink;
+        }
+      }
+
+      @include respond-below(sm) {
+        @include flex-direction-column;
+        min-width: $min-width;
+        margin: 0 auto $v-unit-l;
+
+        .figure {
+          height: $figureheight;
+          img {
+            min-width: 100%;
+          }
+        }
+
+        .e-content {
+          border-top: 5px solid $pink;
+          min-height: $min-heightS;
+        }
+      }
+
+      @include respond-below(xs) {
+        min-width: $min-widthxs;
+      }
+    }
+  }
+}

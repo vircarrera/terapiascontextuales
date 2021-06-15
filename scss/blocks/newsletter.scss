@@ -1,0 +1,26 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-newsletter{
+
+    .e-subtitle-4{
+        color: $white;
+        font-weight:$fw-bold;
+        font-size: $fs-small;
+        margin-bottom:$v-unit-m;
+        margin-bottom:$v-unit-m;
+    }
+    
+    @include respond-between(sm,lg){
+        @include flex(0,0,51%);
+    }
+
+    @include respond-below(xs){
+        @include flex(0,0,100%);    
+    }
+}

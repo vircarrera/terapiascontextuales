@@ -1,0 +1,64 @@
+//
+// Vars
+//
+
+$headerHeight: 60px;
+
+//
+// Styles
+//
+
+.c-header {
+  background: $secondary;
+  position: relative;
+  z-index: 12;
+
+  .page-template-page-investigaciones &,
+  .page-template-page-personas &,
+  .page-template-page-default &,
+  .page-template &,
+  .page-template-default &,
+  .page-template-page-cursos &,
+  .error404 &,
+  .single-post &,
+  .blog &,
+  .search &,
+  .archive & {
+    background: $white;
+  }
+
+  .single-curso & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+
+    @include respond-above(sm) {
+      background: none;
+    }
+
+    @include respond-below(sm) {
+      background: $white;
+    }
+  }
+
+  .single-persona & {
+    background: none;
+  }
+
+  .home & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: none;
+  }
+
+  .container {
+    height: $headerHeight;
+    @include display-flex;
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+}

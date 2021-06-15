@@ -1,0 +1,67 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.w-1310 {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding-left: $v-unit;
+  padding-right: $v-unit;
+
+  @include respond-between(sm, md) {
+    padding-left: $h-unit-l;
+    padding-right: $h-unit-l;
+  }
+  .post-template-default &{
+    overflow: hidden;
+  }
+}
+
+.w-1000 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: $v-unit;
+  padding-right: $v-unit;
+
+  @include respond-between(sm, md) {
+    padding-left: $h-unit-l;
+    padding-right: $h-unit-l;
+  }
+}
+
+body.single-curso,
+body.persona-template-default {
+  & > .container.w-1310 {
+    max-width: none;
+    margin: initial;
+    padding-left: initial;
+    padding-right: initial;
+  }
+}
+
+// Esto es para hacer el aside estar a la izquierda.
+.content {
+  &.cursos,
+  &.blog,
+  .archive &,
+  .category & {
+    margin-top: $v-unit-l;
+    @include display-flex();
+    @include align-items(flex-start);
+    @include flex-wrap(wrap);
+  }
+
+  .post-template-default & {
+    @include display-flex();
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+    @include respond-above(md) {
+      margin-top: $v-unit-l;
+    }
+  }
+}

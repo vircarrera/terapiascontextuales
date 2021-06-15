@@ -1,0 +1,177 @@
+//
+// Vars
+//
+$one: 1px;
+$forty: 40px;
+//
+// Styles
+//
+.page-template:not(.page-template-page-cursos):not(.page-template-page-personas):not(.page-template-page-investigaciones), .page-template-default:not(.home){
+    .content{
+        min-height: 50vh;
+        margin-top: $v-unit-l;
+        h1{
+            background: $secondary;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: $v-unit-m;
+            font-size: $fs-hero;
+            line-height: $lh-easy;
+        }
+        h2{
+            color: $darker;
+            font-size: $fs-heading;
+            line-height: $lh-easy;
+            margin-bottom: $v-unit-m;
+        }
+        h3{
+            color: $darker;
+            font-size: $fs-standard;
+            margin-bottom: $v-unit-s;
+        }
+        p {
+            color: $darker;
+            margin-bottom: $v-unit-s;
+            line-height: $lh-easy;
+        }
+        a:not(.wp-block-button__link) {
+            background: $primary;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: $fw-bold;
+            overflow-wrap: break-word;
+        }
+        a:not(.wp-block-button__link):hover{
+            background: $blue;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: $fw-bold;        
+        }
+
+        
+        a.wp-block-button__link{
+            display: inline-block;
+            font-weight: $fw-bold;
+            cursor: pointer;  
+            background: $primary;
+            text-align: center;
+            border-radius: $br-big;
+            padding: $v-unit-s $h-unit-m;
+            color: $white;
+            font-size: $fs-standard;
+            line-height: $lh-standard;
+            transition: background-position 0.3s linear, font-size 0.3s linear;
+            &:hover {
+                background-position-y: -$unit50;
+                font-size: $fs-medium;
+            }
+        }
+
+        
+  
+        blockquote {
+            font-weight: $fw-bold;
+            position: relative;
+            margin: $v-unit $forty;
+    
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: -3%;
+                width: $v-unit-xs;
+                height: 100%;
+                border-radius: $one;
+                background: $primary;
+            }
+        }
+    
+        ol,
+        ul {
+            margin: $v-unit-m;
+            li {
+                line-height: $lh-read;
+            }
+        }
+    
+        ul {
+            li {
+                list-style: disc;
+            }
+        }
+    
+        ol {
+            li {
+                list-style: decimal;
+            }
+        }
+    
+        img,
+        iframe {
+            margin: $v-unit 0;
+        }
+    
+        .wp-block-gallery {
+            margin: $v-unit-m 0;
+            ul {
+                margin:0;
+                padding: 0;
+        
+                li {
+                list-style: none;
+                }
+            }
+    
+            .blocks-gallery-grid {
+                @include display-flex();
+                @include flex-wrap(wrap);
+                @include justify-content(space-around);
+                @include align-items(center);
+        
+                .blocks-gallery-item {
+                @include flex(0, 0, 48%);
+                }
+            }
+        
+        }
+        .wp-block-image{
+            @include display-flex;
+            @include justify-content(center);
+            @include flex-direction-column;
+            img{
+                width: 100%;
+            }
+        }
+    
+        figcaption{
+            text-align: center;
+        }
+    
+        .wp-block-video, .wp-block-embed{
+            margin: $v-unit 0;
+        } 
+    
+        .wp-block-embed__wrapper{
+            position: relative;
+            padding-bottom: 56.25%; /* 16/9 ratio */
+            padding-top: $v-unit-s; /* IE6 workaround*/
+            height: 0;
+            overflow: hidden;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }           
+        }
+    
+        video{
+            max-width: 100%;
+        } 
+    }  
+}

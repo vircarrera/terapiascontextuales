@@ -1,0 +1,170 @@
+//
+// Vars
+//
+$videoPaddingBottom: 56.25%;
+$backgroundLGHeight: 150%;
+$backgroundMDHeight: 143%;
+$backgroundSMHeight: 140%;
+//
+// Styles
+//
+
+.b-featured {
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    top: -150px;
+    left: 0;
+    right: 0;
+    height: $backgroundMDHeight;
+    background-image: url(#{$img-backgrounds}/fondoazul-curso.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    transition: all 0.6s;
+  }
+
+  .b-featured__content {
+    @include display-flex();
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+
+    .b-featured__header {
+      flex: 0 100%;
+      @include display-flex();
+      @include justify-content(space-between);
+      // @include align-items(flex-end);
+
+      .e-title.--course {
+        margin-bottom: $v-unit-xs;
+      }
+
+      .e-title-author {
+        margin-bottom: $v-unit-s;
+      }
+
+      .e-subtitle-3 {
+        color: $white;
+        font-weight: $fw-lighter;
+
+        a {
+          color: $white;
+          @include transition(font-size 0.3s linear);
+        }
+        a:hover {
+          font-size: $fs-medium;
+        }
+      }
+    }
+
+    .video-wrapper {
+      position: relative;
+      height: 0;
+      padding-bottom: $videoPaddingBottom;
+      overflow: hidden;
+
+      video,
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @include respond-above(md) {
+      padding: $h-unit;
+    }
+  }
+
+  @include respond-above(md) {
+    margin-bottom: $v-unit-xxxl;
+
+    &::before {
+      height: $backgroundLGHeight;
+    }
+
+    .b-featured__video {
+      @include flex(0, 0, 63%);
+    }
+  }
+
+  @include respond-between(sm, md) {
+    margin-bottom: $v-unit-xxl;
+
+    &::before {
+      height: $backgroundMDHeight;
+    }
+
+    &::after {
+      //content: "";
+      position: absolute;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: $backgroundMDHeight;
+      top: -150px;
+      left: 0;
+      right: 0;
+      background-image: url(#{$img-backgrounds}/fondoazul-vacio.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom;
+    }
+
+    .b-featured__header,
+    .b-featured__video {
+      z-index: 1;
+    }
+
+    .b-featured__header {
+      margin-bottom: $v-unit;
+      @include align-items(center);
+    }
+
+    .b-featured__video {
+      @include flex(0, 0, 100%);
+      margin-bottom: 15px;
+    }
+  }
+
+  @include respond-above(sm) {
+    padding-top: $v-unit-xxl;
+  }
+
+  @include respond-below(sm) {
+    margin-bottom: 100px;
+    padding-top: 40px;
+
+    &::before {
+      background-image: url(#{$img-backgrounds}/fondoazul-curso-movil.svg);
+      height: $backgroundSMHeight;
+    }
+
+    .b-featured__header {
+      @include flex-direction-column;
+      margin-bottom: $v-unit;
+      order: 2;
+
+      .e-title-author,
+      .e-price {
+        @include flex(0, 0, 50%);
+      }
+    }
+
+    .b-featured__video {
+      @include flex(0, 0, 110%);
+      margin-bottom: 15px;
+      order: 1;
+      margin-left: -17px;
+    }
+  }
+}

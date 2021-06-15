@@ -1,0 +1,71 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-footer {
+  position: relative;
+  z-index: 11;
+
+  * {
+    line-height: $lh-standard;
+  }
+
+  .bg-darker {
+    border-top: 25px solid $blue;
+    background-color: $darker;
+
+    .container {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include flex-wrap(wrap);
+      @include respond-above(lg) {
+        padding-top: $v-unit-xl;
+        padding-bottom: $v-unit-l;
+      }
+      @include respond-below(lg) {
+        padding-top: $v-unit-l;
+        padding-bottom: $v-unit-m;
+      }
+    }
+  }
+  .bg-darkest {
+    background-color: $darkest;
+    .container {
+      padding-bottom: $v-unit-l;
+    }
+    .copyright{
+      color: $lily-light;
+      text-align: center;
+      margin-bottom: $v-unit-s;
+    }
+    .credits{
+      text-align: center;
+    }
+    .credits a{
+      color: $lily-light;
+      font-weight: $fw-bold;
+      @include transition(color 0.3s linear);
+    }
+    .credits a:hover{
+      color: $white;
+    }
+  }
+
+  @include respond-above(md) {
+    margin-top: $v-unit-xxxl;
+  }
+  @include respond-between(sm, md) {
+    margin-top: $v-unit-xxl;
+  }
+  @include respond-below(sm) {
+    margin-top: $v-unit-xl;
+  }
+
+  .home & {
+    margin-top: 0;
+  }
+}

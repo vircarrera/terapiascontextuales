@@ -1,0 +1,17 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-title {
+  &.--course {
+    background: $primary;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 787.5px;
+  }
+}

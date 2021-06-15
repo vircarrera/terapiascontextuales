@@ -1,0 +1,89 @@
+//
+// Vendor
+//
+@import "vendor/reset";
+// @import "vendor/flickity";
+
+// Config
+@import "config/mixins";
+@import "config/mixins-flex";
+@import "config/mixins-transform";
+@import "config/breakpoints";
+@import "config/basic";
+
+// Elements
+
+@import "elements/burger";
+@import "elements/check";
+@import "elements/cta";
+@import "elements/countdown";
+@import "elements/logo";
+@import "elements/menu";
+@import "elements/menu-bottom";
+@import "elements/menu-legal";
+@import "elements/menu-redes";
+@import "elements/newsletter";
+@import "elements/pagination";
+@import "elements/price";
+@import "elements/search";
+@import "elements/titles";
+@import "elements/video";
+@import "elements/logo__link";
+
+// Blocks
+
+@import "blocks/apreciations";
+@import "blocks/article";
+@import "blocks/banner";
+@import "blocks/card";
+@import "blocks/card-featured";
+@import "blocks/contact";
+@import "blocks/cookies";
+@import "blocks/courses";
+@import "blocks/direct-accesses";
+@import "blocks/docent-course";
+@import "blocks/featured-blog-post";
+@import "blocks/featured";
+@import "blocks/filter";
+@import "blocks/follow";
+@import "blocks/indice";
+@import "blocks/little-card";
+@import "blocks/mapsite";
+@import "blocks/menu-bottom";
+@import "blocks/newsletter";
+@import "blocks/opinions";
+@import "blocks/our-courses";
+@import "blocks/pager";
+@import "blocks/persona-b-content";
+@import "blocks/persona-b-person-card";
+@import "blocks/related";
+@import "blocks/single-b-opening";
+@import "blocks/slider";
+@import "blocks/social";
+@import "blocks/team-b-info";
+@import "blocks/team-b-team";
+@import "blocks/university";
+@import "blocks/videos-apoyo";
+@import "blocks/why-choose-us";
+
+// // Layout
+
+@import "layout/aside";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/layout";
+@import "layout/nav";
+
+//  // Partials
+
+@import "partials/front-page";
+@import "partials/investigacion";
+@import "partials/page-cursos";
+@import "partials/persona";
+@import "partials/page-search";
+@import "partials/single";
+@import "partials/single-curso";
+@import "partials/team";
+@import "partials/404";
+@import "partials/page-template";

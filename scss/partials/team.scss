@@ -1,0 +1,15 @@
+.page-template-page-personas{
+    .c-content{
+        @include respond-above(md){
+            margin-top: 70px;
+        }
+        @include respond-between(sm,md){
+            margin-top: 40px;
+        }
+        @include respond-below(sm){
+            margin-top: 30px;
+        }
+
+    }
+
+}

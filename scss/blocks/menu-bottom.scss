@@ -1,0 +1,15 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-menubottom{
+    @include flex-between; 
+    @include flex-wrap(wrap);
+    border-top: 1px solid $lily-light;
+    padding-top: $v-unit-l;
+    margin-bottom: $v-unit-l;
+}

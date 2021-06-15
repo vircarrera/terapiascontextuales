@@ -1,0 +1,281 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-check {
+  @include respond-above(md) {
+    display: none;
+  }
+  @include respond-below(md) {
+    display: none;
+  }
+}
+
+.e-check:checked {
+  & ~ .navcontainer {
+    height: 100vh;
+
+    .e-search {
+      .search__input {
+        border-bottom-color: $white;
+      }
+
+      .search__lupa {
+        i.ico-lupa {
+          &::before {
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+
+  & ~ .e-burger {
+    transform: rotate(-45deg);
+
+    img {
+      &.light {
+        display: inline-block;
+      }
+      &.dark {
+        display: none;
+      }
+    }
+  }
+
+  & ~ .e-logo__link {
+    .e-logo {
+      .page-template-page-investigaciones &,
+      .blog &,
+      .page-template-page-personas &,
+      .single-post &,
+      .page-template-page-cursos &,
+      .single-curso &,
+      .search &,
+      .page-template-default &,
+      .page-template &,
+      .archive & {
+        @include respond-above(sm) {
+          &.isotype-negative {
+            display: block;
+          }
+
+          &.isotype-positive {
+            display: none;
+          }
+        }
+
+        @include respond-below(sm) {
+          &.negative {
+            display: block;
+          }
+
+          &.positive {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// check price in single-curso.php
+
+#checkcross {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+}
+
+label.toggle-item {
+  width: 8.5em;
+  background: $blue;
+  height: 3em;
+  display: inline-block;
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease;
+  transform-origin: 20% center;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    transition: all 0.2s ease;
+    width: 2.3em;
+    height: 2.3em;
+    top: 0.25em;
+    left: 0.25em;
+    border-radius: 2em;
+    transition: 0.3s ease;
+  }
+}
+
+.checkcross {
+  label:before {
+    content: none;
+    content: "";
+    position: absolute;
+  }
+  .tick {
+    border-radius: 50px;
+    width: 3.5em;
+    height: 2.5em;
+    position: absolute;
+    z-index: 10;
+    background: $dark;
+    transition: 0.4s ease;
+    top: 3px;
+    left: 4.5px;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      transition: 0.4s ease;
+      color: $white;
+      font-size: $fs-standard;
+    }
+    &:before {
+      width: 25px;
+      transform: translate(18px, 7px);
+      content: "€";
+    }
+    &:after {
+      width: 10px;
+      transform: translate(20px, 11px);
+    }
+  }
+  .euros,
+  .dollars {
+    position: absolute;
+    top: 12px;
+    z-index: 5;
+  }
+  .euros {
+    left: 25px;
+  }
+  .dollars {
+    right: 16px;
+  }
+}
+
+#checkcross:checked + .checkcross label {
+  .tick {
+    left: 66px;
+    background: $dark;
+    overflow-wrap: normal;
+
+    &:before {
+      content: "USD";
+      position: absolute;
+      width: 27px;
+      transform: translate(8px, 7px);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 27px;
+    }
+  }
+}
+
+// check desplegable indice
+
+// check aside filtro cursos
+
+#checkfilter {
+  position: absolute;
+  display: block;
+  opacity: 0;
+}
+
+.e-checkfilter__label {
+  img {
+    transform: rotate(0deg);
+    transition: all 0.6s;
+  }
+}
+@include respond-below(md) {
+  #checkfilter:checked ~ .c-aside.--courses,
+  #checkfilter:checked ~ .c-aside.--entries {
+    .c-subtitle {
+      .e-checkfilter__label {
+        img {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  #checkfilter:checked ~ .c-aside.--courses {
+    height: 450px;
+    overflow: scroll;
+  }
+
+  #checkfilter:checked ~ .c-aside.--entries {
+    height: 200px;
+  }
+}
+
+// acaba check aside filtro cursos
+
+@include respond-above(md) {
+  .e-indice__check,
+  .e-indice__arrow {
+    display: none;
+  }
+}
+@include respond-below(md) {
+  .e-indice__arrow {
+    display: inline-block;
+    position: absolute;
+    transition: rotate 1s;
+    transform: rotate(90deg);
+    z-index: 10;
+    right: 30px;
+    top: 10px;
+
+    .ico-flecha-der:before {
+      color: $white;
+      font-size: 16px;
+    }
+  }
+
+  .e-indice__check {
+    opacity: 0;
+  }
+
+  #checkindice:checked {
+    & + .b-featured {
+      &::before {
+        height: 133%;
+      }
+
+      .b-indice {
+        max-height: 700px;
+
+        .totallections {
+          .e-indice__arrow {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    & ~ .c-content {
+      .c-aside.--course {
+        margin-top: -460px;
+      }
+    }
+  }
+}

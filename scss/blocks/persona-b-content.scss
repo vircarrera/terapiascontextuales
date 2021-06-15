@@ -1,0 +1,110 @@
+//VARS
+$oneseven: 17px;
+$fourty: 40px;
+//STYLES
+
+.persona-template-default {
+
+    .b-content{
+
+        p{
+            color: $white;
+            margin-bottom: $v-unit-xs;
+        }
+
+        a{
+            background: $primary;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            img{
+                @include transition(transform 0.3s linear);
+            }
+        }
+
+        a:hover{
+            background: $blue;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        a>img:hover{
+            @include transform-scale(1.05);
+        }
+
+        .text ul,.text ol{
+            margin-left: $oneseven;
+            li {
+              list-style: disc;
+              margin-bottom: $v-unit-s;
+              line-height: $lh-easy;
+              color: $white;
+            }
+        }
+        .b-bibliography-images{
+            @include display-flex;
+            @include flex-wrap(wrap);
+            img{
+                border-radius: $br-thin;
+                overflow: hidden;
+            }
+        }
+    
+        @include respond-above(md){
+            @include flex(0,0,70%);
+
+            .bibliography-wrapper{
+                margin-bottom: $v-unit-l;  
+            }
+            .b-bibliography-images{
+                @include justify-content(flex-start);
+                div{
+                    @include flex(0, 0, 23%);
+                    margin-right: $fourty;
+                }
+            }
+
+        }
+        @include respond-between(sm,md){
+            @include flex(0,0,100%);
+
+            .b-bibliography{
+                @include display-flex;
+                @include justify-content(space-between);
+                .bibliography-wrapper{
+                    @include flex(0, 0, 55%);
+                }
+                .b-bibliography-images{
+                    @include flex(0, 0, 40%);
+                    @include justify-content(space-between);
+                    div{
+                        @include flex(0, 0, 25%);
+                        @include display-flex;
+                        @include align-items(center);
+                    }
+                }
+            }
+        }
+        @include respond-below(sm){
+            @include flex(0,0,100%);
+
+            > p, .b-bibliography,.b-interviews{
+                margin-bottom: $fourty;
+            }
+            .bibliography-wrapper{
+                margin-bottom: $v-unit-l;
+            }
+            .b-bibliography-images{
+                @include flex(0, 0, 50%);
+                @include justify-content(space-between);
+                div{
+                    @include flex(0, 0, 30%);
+                }
+            }
+
+        }
+        
+    }
+ 
+}

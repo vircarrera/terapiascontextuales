@@ -1,0 +1,177 @@
+// VARS
+$min-h : 200px;
+$illustrationheight: 250px;
+$illustrationheightL: 390px;
+$forty: 40px;
+
+// STYLES
+
+.search{
+    .c-search{
+        min-height: $min-h;   
+        margin-top: $v-unit-l; 
+        @include display-flex;
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+        .e-title{
+            color: $darkest;
+            margin-bottom: $v-unit-l;
+            width: 100%;
+        }
+        .e-illustration{
+            position: relative;
+            .e-illustration-one{
+                background-image: url("img/content/search-one.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                @include respond-above(md){
+                    width: 70%;
+                    height: 100%;
+                    margin-left: 30%;
+                }
+                @include respond-between(sm,md){
+                    width: 70%;
+                    margin-left: 23%;
+                    height: $illustrationheight;
+                    @include display-flex;
+                }
+            }
+            .e-illustration-two{
+                background-image: url("img/content/search-two.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                @include respond-above(md){
+                    width: 15%;
+                    height: 57%;
+                    position: absolute;
+                    bottom: -122%;
+                    right: -7.5%;
+                    z-index: 10;
+                }
+                @include respond-between(sm,md){
+                    width: 21%;
+                    height: 65%;
+                    position: absolute;
+                    bottom: -40px;
+                    right: -0.5%;
+                    z-index: 10;
+                }
+            }
+            .e-illustration-three{
+                background-image: url("img/content/search-three.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                @include respond-above(md){
+                    width: 40%;
+                    height: 37%;
+                    position: absolute;
+                    bottom: -10%;
+                    left: -5%;              
+                }
+                @include respond-between(sm,md){
+                    width: 40%;
+                    height: 45%;
+                    position: absolute;
+                    bottom: -9%;
+                    left: 3%;
+                }
+            }
+            @include respond-above(md){
+                width: 80%;
+                height: $illustrationheightL;
+                @include display-flex;
+            }
+            @include respond-between(sm,md){
+                width: 100%;
+                height: $illustrationheight;
+                @include display-flex;
+                margin-bottom: $forty;
+            }
+            @include respond-below(sm){
+                background-image: url("img/content/search.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 90%;
+                height: $min-h;
+                margin-bottom: $v-unit-m;
+                background-position: center;
+            }
+        }
+        .row-search-results{
+            .--search {
+                width: 100%;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+                background-color: $white;
+                margin-bottom: $v-unit-l;
+                position: relative;
+                .e-subtitle-3 {
+                    color: $darkest;
+                    margin-bottom: $v-unit-m;
+                }
+                p {
+                    color: $darker;
+                    margin-bottom: $v-unit-m;
+                    font-size: $fs-read;
+                }
+                .cta-link {
+                    display: block;
+                }
+            
+                @include respond-above(md) {
+                    border-radius: 0 $br-thin $br-thin 0;
+                    padding: $v-unit-l $v-unit-m $v-unit-m;    
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: $v-unit-xs;
+                        height: 100%;
+                        background: $primary;
+                    }        
+
+                }
+                @include respond-between(sm, md) {
+                    border-radius: 0 $br-thin $br-thin 0;
+                    padding: $v-unit-l $v-unit-m $v-unit-m $v-unit-m;
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 5px;
+                        height: 100%;
+                        background: $primary;
+                    }  
+                }
+
+                @include respond-below(sm) {
+                    flex-direction: column;
+                    border-radius: $br-thin $br-thin 0 0;
+                    padding: $v-unit-l $v-unit-m $v-unit-m $v-unit-m;
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: $primary;
+                    }  
+
+                }
+            }
+            @include respond-above(md){
+                width: 80%;
+            }
+        }
+
+    }
+
+
+}
+
+

@@ -1,0 +1,79 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-university {
+  border-radius: $br-thin;
+
+  .c-title {
+    margin-bottom: $h-unit-l;
+  }
+
+  .e-university {
+    @include display-flex();
+    @include align-items(center);
+    @include flex-wrap(wrap);
+
+    .e-icon {
+      @include flex(0, 0, 15%);
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    @include respond-above(md) {
+      @include justify-content(center);
+
+      .e-icon {
+        margin: 0 $h-unit-xs;
+      }
+    }
+
+    @include respond-below(md) {
+      @include justify-content(center);
+    }
+  }
+
+  @include respond-above(md) {
+    @include justify-content(space-between);
+
+    .home & {
+      background: $secondary;
+      padding: $unit50 $h-unit;
+      @include justify-content(center);
+
+      .c-title {
+        color: $white;
+      }
+
+      .e-icon {
+        @include flex(0, 0, 15%);
+      }
+    }
+  }
+
+  @include respond-between(sm, md) {
+    .e-university {
+      .e-icon {
+        @include flex(0, 0, 20%);
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    padding: $h-unit;
+
+    .e-university {
+      @include justify-content(space-between);
+
+      .e-icon {
+        @include flex(0, 0, 45%);
+      }
+    }
+  }
+}

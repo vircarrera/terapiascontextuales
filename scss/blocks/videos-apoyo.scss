@@ -1,0 +1,70 @@
+//
+// Vars
+//
+$b-video-max-height-lg: 250px;
+$b-video-max-height-md: 160px;
+$b-video-max-height-sm: 230px;
+$b-video-max-height-xs: 520px;
+//
+// Styles
+//
+
+.b-videosapoyo {
+  @include display-flex();
+  @include justify-content(space-between);
+  @include flex-wrap(wrap);
+  margin-top: $v-unit-l;
+
+  .video__wrapper {
+    @include respond-above(md) {
+      video,
+      iframe {
+        max-height: 250px;
+      }
+    }
+
+    @include respond-between(sm, md) {
+      video,
+      iframe {
+        max-height: 150px;
+      }
+    }
+
+    @include respond-between(xs, sm) {
+      video,
+      iframe {
+        max-height: 200px;
+      }
+    }
+
+    @include respond-above(xs) {
+      @include flex(0, 0, 47%);
+    }
+
+    @include respond-below(xs) {
+      @include flex(0, 0, 100%);
+      margin-bottom: $v-unit-l;
+
+      video,
+      iframe {
+        max-height: 200px;
+      }
+    }
+  }
+
+  @include respond-above(md) {
+    max-height: $b-video-max-height-lg;
+  }
+
+  @include respond-between(sm, md) {
+    max-height: $b-video-max-height-md;
+  }
+
+  @include respond-between(xs, sm) {
+    max-height: $b-video-max-height-sm;
+  }
+
+  @include respond-below(xs) {
+    max-height: $b-video-max-height-xs;
+  }
+}

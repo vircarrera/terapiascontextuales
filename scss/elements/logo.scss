@@ -1,0 +1,66 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-logo {
+  display: none;
+  position: relative;
+  z-index: 100;
+
+  .home &,
+  .single-persona & {
+    @include respond-above(sm) {
+      &.isotype-negative {
+        display: inline-block;
+      }
+    }
+
+    @include respond-below(sm) {
+      &.negative {
+        display: inline-block;
+      }
+    }
+  }
+
+  .page-template-page-investigaciones &,
+  .page-template-page-personas &,
+  .page-template-page-cursos &,
+  .page-template-page-default &,
+  .page-template-default:not(.home) &,
+  .page-template &,
+  .error404 &,
+  .blog &,
+  .single-post &,
+  .search &,
+  .archive & {
+    @include respond-above(sm) {
+      &.isotype-positive {
+        display: inline-block;
+      }
+    }
+
+    @include respond-below(sm) {
+      &.positive {
+        display: inline-block;
+      }
+    }
+  }
+
+  .single-curso & {
+    @include respond-above(sm) {
+      &.isotype-negative {
+        display: inline-block;
+      }
+    }
+
+    @include respond-below(sm) {
+      &.positive {
+        display: inline-block;
+      }
+    }
+  }
+}

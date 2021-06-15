@@ -1,0 +1,115 @@
+//
+// Vars
+//
+$img : 200px;
+$widthL : 335px;
+$forty : 40px;
+//
+// Styles
+//
+
+.persona-template-default{
+    .c-persona-bg{
+        .b-person-card{
+            position: relative;
+            z-index: 18;
+            
+            .e-frame{
+                @include display-flex;
+                @include justify-content(center);
+                .frame {
+                    border-radius: 100%;
+                    overflow: hidden;
+                    img{
+                        height: $img;
+                        width: $img;
+                        object-fit: cover;
+                    }
+                }
+            }
+            .e-content{
+
+                .e-title{
+                    background: $primary;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin-bottom: $v-unit-s;
+                }
+                .e-subtitle-3{
+                    color: $white;
+                }
+                hr{
+                    @include hr-color($lily-light);
+                    width: 100%;
+                }
+                .cta-link{
+                    display:block;
+                    margin-bottom:$v-unit;
+                }
+                .wrapper{
+                    text-align: center;
+                    a{
+                        .ico-linkedin::before, .ico-email::before{
+                            color:$lily-light;  
+                            display: inline-block; 
+                            font-size: $fs-heading;
+                            margin: $unit;
+                            @include transition(color 0.3s linear);
+                        }
+                    }
+                    a:hover{
+                        .ico-linkedin::before, .ico-email::before{
+                            color:$white;  
+                        }
+                    }
+                    
+                }
+            }
+            @include respond-above(md){
+                @include flex(0, 0, 25%);
+                width: $widthL;
+                @include display-flex;
+                @include flex-direction-column;
+                @include align-items(center);
+                .e-frame{
+                    margin-bottom: $forty;
+                }
+                
+                .e-title, .e-subtitle-3, .cta-link, .ico-linkedin{
+                    text-align: center;
+                }
+            }
+            @include respond-between(sm,md){
+                @include flex(0, 0, 100%);
+                @include display-flex;
+                @include align-items(center);
+                left: 0;
+                right: 0;
+                margin:0 auto;
+                margin-bottom: $forty;
+                .e-frame{
+                    margin-right: $h-unit-xl;
+                }
+            }
+            @include respond-below(sm){
+                flex: 0 0 100%;
+                margin-bottom: $forty;
+                .e-frame{
+                    margin-bottom: $v-unit-l;
+                }
+                .e-content{
+                    @include display-flex;
+                    @include flex-direction-column;
+                    @include flex-center; 
+                    padding: 0 5%;             
+                    .e-title, .e-subtitle-3, .cta-link, .ico-linkedin{
+                    text-align: center;
+                    }
+                }
+
+            }
+
+        }
+    }
+}

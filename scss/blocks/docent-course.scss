@@ -1,0 +1,71 @@
+//
+// Vars
+//
+
+$frame: 50px;
+
+//
+// Styles
+//
+
+.single-curso {
+  .b-docente {
+    .e-wrapper {
+      @include display-flex();
+
+      .frame-container {
+        @include display-flex;
+        @include justify-content(center);
+        margin-right: $h-unit;
+
+        .frame {
+          width: $frame;
+          height: $frame;
+          border-radius: $unit100p;
+          overflow: hidden;
+        }
+      }
+
+      .name-ocupation {
+        @include display-flex();
+        @include flex-direction-column();
+        @include justify-content(center);
+
+        .e-name {
+          color: $darker;
+          font-weight: $fw-bold;
+          font-size: $fs-read;
+          line-height: $lh-standard;
+          margin-bottom: $v-unit-xs;
+        }
+
+        .e-ocupation {
+          color: $darkest;
+          font-size: $fs-small;
+        }
+
+        .e-bio {
+          color: $darker;
+        }
+      }
+      @include respond-above(md) {
+        margin-bottom: $h-unit-l;
+      }
+      @include respond-below(md) {
+        margin-bottom: $v-unit-m;
+      }
+    }
+
+    .e-bio {
+      margin-bottom: $v-unit-s;
+      color: #0b0430;
+    }
+
+    @include respond-above(md) {
+      padding: $h-unit-l 0;
+    }
+    @include respond-below(md) {
+      padding: $v-unit-m 0;
+    }
+  } /*cierra .b-docente*/
+} /*cierra single-curso*/

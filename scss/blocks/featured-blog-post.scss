@@ -1,0 +1,65 @@
+//
+// Vars
+$min-height: 250px;
+$min-heightS: 200px;
+$min-withS:350px;
+//
+// Styles
+//
+
+.blog .c-content .b-card:first-child {
+  min-width: 100%;
+  @include display-flex;
+  margin-bottom: $v-unit-l;
+  .e-content {
+    height: auto;
+    min-height: auto;
+  }
+
+  @include respond-above(sm) {
+    @include flex-direction-row;
+    .e-card-heading{
+      @include flex(0, 0, 50%);
+      
+      .figure{
+        border-radius: $br-thin 0 0 $br-thin;
+        min-width: 100%;
+        min-height: $min-height;
+        img {
+          min-width: 100%;
+          max-width: none;
+        }
+        &::before {
+          border-radius: $br-thin 0 0 $br-thin;
+        }
+      }
+    }
+
+    .e-content {
+      margin-top: $v-unit-l;
+    }
+  }
+
+  @include respond-between(sm,md){
+    .e-card-heading{
+      width: 250px;
+    }
+  }
+
+  @include respond-below(sm) {
+    @include flex-direction-column;
+    min-width: $min-withS;
+    .figure{
+      height: $min-height;
+      img{
+        min-width: 100%;
+      }
+    }
+    .e-content {
+      min-height: $min-heightS;
+    }
+  }
+  @media (max-width:320px){
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+//
+// Vars
+//
+$countdownTranslate: -2px;
+//
+// Styles
+//
+
+.e-countdown {
+  margin-left: $h-unit;
+  transform: translateY($countdownTranslate);
+
+  .ujiCountdown {
+    span.countdown_amount {
+      padding: 0 !important;
+      height: 0 !important;
+    }
+    span.countdown_txt {
+      display: none !important;
+    }
+    span.countdown_section {
+      margin-right: $v-unit-xs;
+
+      &::after {
+        content: ":";
+      }
+      &:last-of-type {
+        &::after {
+          content: none;
+        }
+      }
+    }
+    * {
+      background: none !important;
+      text-shadow: none !important;
+    }
+  }
+}

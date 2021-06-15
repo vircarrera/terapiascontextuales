@@ -1,0 +1,433 @@
+/*
+	*
+	* Colours
+	*
+*/
+
+// Paleta de Primarios
+
+$primary: linear-gradient(
+  45deg,
+  rgba(239, 93, 79, 1) 0%,
+  rgba(242, 156, 98, 1) 100%
+);
+
+$primaryhover: linear-gradient(
+  45deg,
+  rgba(239, 93, 79, 1) 0%,
+  rgba(239, 93, 79, 1) 35%,
+  rgba(242, 156, 98, 1) 100%
+);
+
+$secondary: linear-gradient(
+  130deg,
+  rgba(35, 30, 78, 1) 0%,
+  rgba(10, 4, 48, 1) 100%
+);
+
+$gradientHeader: linear-gradient(
+  180deg,
+  rgba(10, 4, 48, 1) 0%,
+  rgba(10, 4, 48, 0.6) 45%,
+  rgba(35, 30, 78, 0.3) 70%,
+  rgba(35, 30, 78, 0) 100%
+);
+
+// Paleta morados
+
+$lily-light: #6274a6;
+$lily-dark: #39427c;
+$dark: #1b124c;
+$darker: #0b0430;
+$darkest: #090327;
+
+// Paleta blancos
+
+$grey: #f4f4f4;
+$white: #ffffff;
+
+// Paleta destacados
+
+$pink: #ff5c87;
+$blue: #2a6af9;
+$purple: #7b64f3;
+
+// messages
+
+$success: #26c281;
+$info: #22a7f0;
+$warning: #f39c12;
+$danger: #ef4836;
+
+//blue filter gradient
+$filter: linear-gradient(
+  190deg,
+  rgba(42, 106, 249, 0) 0%,
+  rgba(42, 106, 249, 1) 90%,
+  rgba(42, 106, 249, 1) 100%
+);
+
+// text shadow
+
+$ts-grey: 1px 1px 5px #3a3a3a8a;
+
+$ts-fast: 0.3s;
+$ts-soft: 0.6s;
+
+// box shadow
+
+$boxshadowcero: 0 0px 0px rgba(0, 0, 0, 0);
+$boxshadownormal: 0 4px 4px rgba(0, 0, 0, 0.2);
+$boxshadowhover: 0 4.5px 4.5px rgba(70, 70, 70, 0.4);
+$transitionshadow: all 0.3s ease-in-out;
+
+// gradients
+
+//indice
+$indiceGradient: linear-gradient(
+  180deg,
+  rgba($darkest, 0) 0%,
+  rgba($darkest, 0.8) 100%
+);
+
+/*
+-
+Font Families
+-
+*/
+
+$ff-main: "Open Sans", sans-serif;
+$ff-secondary: "Open Sans", sans-serif;
+
+/*
+-
+Font Sizes
+-
+*/
+
+$fs-extra: 100px;
+$fs-superjumbo: 80px;
+$fs-jumbo: 60px;
+$fs-extrabig: 52px;
+$fs-big: 45px;
+$fs-hero: 30px;
+$fs-large: 25px;
+$fs-heading: 22px;
+$fs-medium: 20px;
+$fs-standard: 18px;
+$fs-read: 16px;
+$fs-small: 14px;
+$fs-minor: 12px;
+$fs-x-small: 8.5px;
+
+$unit100p: 100%;
+$unit100: 100px;
+$unit50: 50px;
+
+$v-unit-xs: 5px;
+$unit: 7.5px;
+$v-unit-s: 10px;
+$v-unit: 15px;
+$v-unit-m: 20px;
+$v-unit-l: 30px;
+$v-unit-xl: 60px;
+$v-unit-xxl: 90px;
+$v-unit-xxxl: 120px;
+
+$h-unit-xs: 7.5px;
+$h-unit: 15px;
+$h-unit-m: 20px;
+$h-unit-l: 30px;
+$h-unit-xl: 60px;
+$h-unit-xxl: 90px;
+$h-unit-xxxl: 120px;
+
+$lh-extra: 2;
+$lh-big: 1.75;
+$lh-read: 1.6667;
+$lh-easy: 1.4;
+$lh-standard: 1.33333;
+$lh-normal: 1.2;
+$lh-small: 1.166667;
+$lh-reset: 1;
+$lh-zero: 0;
+
+$bs-double: 2px solid;
+
+/*
+-
+Font Weights
+-
+*/
+
+$fw-black: 800;
+$fw-bold: 700;
+$fw-medium: 600;
+$fw-normal: 400;
+$fw-light: 300;
+$fw-lighter: 100;
+
+/*
+-
+Font Styles
+-
+*/
+
+$fs-italic: italic;
+
+/*
+-
+Border Radius
+-
+*/
+
+$br-big: 25px;
+$br-thin: 7px;
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/*
+-
+Others
+-
+*/
+
+$img-bg: "img/backgrounds/";
+$img-content: "img/content/";
+$img-backgrounds: "img/backgrounds/";
+
+$border-style: 1px solid;
+$border-double: 2px solid;
+$sleeve-scale-hover: 1.01;
+
+/*
+-
+Reset
+-
+*/
+
+* {
+  box-sizing: border-box;
+  line-height: $lh-reset;
+}
+
+body {
+  font-family: $ff-main;
+  font-size: $fs-small;
+  background: #f4f4f4;
+  position: relative;
+  color: $darker;
+}
+
+a,
+input,
+textarea,
+button,
+button:focus,
+select {
+  border: 0;
+  outline: none !important;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+p {
+  line-height: $lh-standard;
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: $darkest;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+em {
+  font-style: $fs-italic;
+}
+
+strong {
+  font-weight: $fw-bold;
+
+  em {
+    font-weight: $fw-bold;
+    font-style: $fs-italic;
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+  opacity: 0 !important; /* no usar display none */
+}
+
+.page-template-page-contacto .grecaptcha-badge {
+  opacity: 1 !important;
+}
+
+figcaption {
+  display: block;
+  line-height: $lh-small;
+  font-size: $fs-minor;
+  padding-top: $unit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.has-text-align-center,
+.aligncenter {
+  text-align: center;
+}
+
+.has-text-align-right,
+.alignright {
+  text-align: right;
+}
+
+.has-text-align-left,
+.alignleft {
+  text-align: left;
+}
+
+@font-face {
+  font-family: "terapiascontextuales";
+  src: url("fonts/terapiascontextuales.woff?23ye0b") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.iconos {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "terapiascontextuales" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-clases-directo:before {
+  content: "\e90f";
+}
+.ico-certificate:before {
+  content: "\e910";
+  color: #929292;
+}
+.ico-lupa:before {
+  content: "\e905";
+}
+.ico-youtube:before {
+  content: "\e901";
+}
+.ico-acceso-ilimitado:before {
+  content: "\e900";
+  color: #0b0430;
+}
+.ico-campus-virtual:before {
+  content: "\e902";
+  color: #0b0430;
+}
+.ico-candado-abierto:before {
+  content: "\e903";
+  color: #6274a6;
+}
+.ico-candado-cerrado:before {
+  content: "\e904";
+  color: #6274a6;
+}
+.ico-Descargar:before {
+  content: "\e906";
+  color: #0b0430;
+}
+.ico-docente:before {
+  content: "\e907";
+  color: #0b0430;
+}
+.ico-facebook:before {
+  content: "\e908";
+}
+.ico-flecha-der:before {
+  content: "\e909";
+  color: #2a6af9;
+}
+.ico-flecha-izq:before {
+  content: "\e90a";
+  color: #2a6af9;
+}
+.ico-foro-global:before {
+  content: "\e90b";
+  color: #0b0430;
+}
+.ico-instagram:before {
+  content: "\e90c";
+}
+.ico-Lecciones:before {
+  content: "\e90d";
+  color: #0b0430;
+}
+.ico-linkedin:before {
+  content: "\e90e";
+}
+.ico-Online:before {
+  content: "\e911";
+  color: #0b0430;
+}
+.ico-Recursos:before {
+  content: "\e912";
+  color: #0b0430;
+}
+.ico-tc-breadcrumb:before {
+  content: "\e913";
+  color: #6274a6;
+}
+.ico-twitter:before {
+  content: "\e914";
+}
+.ico-valoraciones-positivas:before {
+  content: "\e915";
+  color: #0b0430;
+}
+.ico-email:before {
+  content: "\e945";
+}

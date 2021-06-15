@@ -1,0 +1,78 @@
+//
+// Vars
+//
+$eTextLGHeight: 100px;
+$eTextMDHeight: 150px;
+$eTextSMHeight: 110px;
+//
+// Styles
+//
+
+.b-direct-accesses {
+  @include display-flex();
+
+  .e-direct-accesses {
+    @include flex(0, 0, 30%);
+  }
+
+  .e-image {
+    height: 186px;
+    margin-bottom: $v-unit-m;
+    @include display-flex;
+    align-items: flex-end;
+
+    img {
+      margin: 0 auto;
+      height: 80%;
+      object-fit: cover;
+    }
+  }
+
+  h2,
+  .e-text,
+  .e-link {
+    width: 100%;
+  }
+
+  h2 {
+    margin-bottom: $v-unit-l;
+  }
+
+  .e-text {
+    min-height: $eTextLGHeight;
+  }
+
+  @include respond-above(sm) {
+    @include justify-content(space-evenly);
+
+    h2,
+    .e-text,
+    .e-link {
+      text-align: center;
+    }
+  }
+
+  @include respond-between(sm, md) {
+    .e-text {
+      min-height: $eTextMDHeight;
+    }
+  }
+
+  @include respond-below(sm) {
+    @include flex-direction-column;
+
+    h2,
+    .e-text,
+    .e-link {
+      text-align: left;
+    }
+
+    .e-text {
+      min-height: $eTextSMHeight;
+    }
+
+    .e-courses {
+      margin-bottom: $h-unit-l;
+    }
+  }
+}

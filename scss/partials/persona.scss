@@ -1,0 +1,176 @@
+//
+// Vars
+//
+
+$backgroundLGHeight: 146%;
+$backgroundMDHeight: 141%;
+$backgroundSMHeight: 125%;
+$onesixzero: 160px;
+$onethreezero: 130px;
+$twohund: 50px;
+$eighty: 80px;
+$forty: 40px;
+
+//
+// Styles
+//
+
+.persona-template-default {
+  .persona {
+    .c-persona-bg {
+      position: relative;
+      z-index: 10;
+      background-image: url(img/backgrounds//fondoazul-curso.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom;
+      height: 140%;
+      margin-top: -20%;
+      padding-bottom: 26%;
+      margin-bottom: -10%;
+
+      .w-1310 {
+        min-height: 100%;
+        padding-top: 20%;
+      }
+
+      @include respond-between(sm, md) {
+        margin-bottom: -20%;
+      }
+
+      @include respond-below(xs) {
+        margin-top: -25%;
+        padding-bottom: 60%;
+        margin-bottom: -45%;
+      }
+    }
+
+    .w-1310 {
+      position: relative;
+      z-index: 10;
+      min-height: $unit100p;
+
+      .flex {
+        @include display-flex;
+        @include flex-wrap(wrap);
+        @include justify-content(space-between);
+      }
+
+      .--research {
+        margin: 0;
+        .research {
+          @include flex(0, 0, 100%);
+        }
+      }
+    }
+
+    .e-subtitle-2 {
+      color: $lily-light;
+    }
+    .e-intro {
+      line-height: $lh-read;
+    }
+
+    .articles-row {
+      @include display-flex;
+      @include flex-wrap(wrap);
+      .--blog {
+        margin: $v-unit-m $v-unit-m $v-unit-m 0;
+      }
+    }
+
+    .courses-row {
+      @include display-flex;
+      @include flex-wrap(wrap);
+      .--course {
+        margin: $v-unit-m $v-unit-m $v-unit-m 0;
+      }
+    }
+
+    .researchs-row {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include flex-wrap(wrap);
+      .--research ~ .--research {
+        margin-top: $v-unit-m;
+      }
+    }
+
+    @include respond-above(md) {
+      margin-top: $unit100;
+      .related-researchs,
+      .courses,
+      .articles {
+        margin-left: 30%;
+      }
+      .e-subtitle-2 {
+        margin-bottom: $v-unit-l;
+      }
+
+      .e-intro,
+      .b-bibliography,
+      .b-interviews,
+      .courses,
+      .articles {
+        margin-bottom: $v-unit-xl;
+      }
+
+      .courses {
+        margin-top: $twohund;
+      }
+    }
+
+    @include respond-between(sm, md) {
+      margin-top: $eighty;
+      .e-subtitle-2 {
+        margin-bottom: $v-unit-l;
+      }
+      .e-intro,
+      .b-bibliography,
+      .b-interviews,
+      .courses,
+      .articles {
+        margin-bottom: $forty;
+      }
+      .courses {
+        margin-top: $onethreezero;
+      }
+      .courses-row,
+      .articles-row {
+        @include justify-content(center);
+      }
+    }
+
+    @include respond-below(sm) {
+      margin-top: $v-unit-l;
+
+      .research {
+        border-radius: 0 7px 7px 0;
+        padding: $v-unit-m $v-unit-m $v-unit-m $v-unit-l;
+        border-left: 5px solid #2a6af9;
+        border-bottom: none;
+      }
+
+      .e-subtitle-2 {
+        margin-bottom: $v-unit-m;
+      }
+
+      .e-intro,
+      .b-bibliography,
+      .b-interviews,
+      .courses,
+      .articles {
+        margin-bottom: $forty;
+      }
+
+      .courses {
+        margin-top: $unit50;
+      }
+
+      .courses-row,
+      .articles-row {
+        @include justify-content(center);
+      }
+    }
+  }
+}

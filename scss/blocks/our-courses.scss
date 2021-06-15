@@ -1,0 +1,59 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+.b-our-courses {
+  padding: $unit100 0 $unit50;
+
+  .c-title,
+  .c-subtitle {
+    margin-bottom: $h-unit-l;
+  }
+
+  .c-subtitle,
+  .cta {
+    text-align: center;
+  }
+
+  .e-our-courses {
+    // @include display-flex();
+    // @include justify-content(space-evenly);
+    margin-bottom: $v-unit-xl;
+
+    .b-card.--course {
+      width: 284px;
+      margin-right: 50px !important;
+    }
+  }
+
+  .cta {
+    width: $unit100p;
+  }
+
+  @include respond-above(md) {
+    .b-card.--course {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include respond-between(sm, md) {
+    .e-our-courses {
+      margin-right: -$h-unit-l;
+
+      .b-card.--course {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    .e-our-courses {
+      .b-card.--course {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

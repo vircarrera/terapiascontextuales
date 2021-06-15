@@ -1,0 +1,94 @@
+//
+// Vars
+//
+$ImgH: 400px;
+$e-title: 28px;
+
+//
+// Styles
+//
+
+.post-template-default {
+  .b-opening {
+    @include flex(0, 0, 100%);
+    position: relative;
+    margin-bottom: 30px;
+    .e-photo {
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: $ImgH;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $filter;
+      }
+    }
+    .info-wrapper {
+      position: absolute;
+      .bg-white {
+        // background: rgba($dark, 0.5);
+        .e-title {
+          position: relative;
+          color: $white;
+          font-weight: $fw-bold;
+          line-height: $lh-easy;
+          margin-bottom: $v-unit-l;
+          z-index: 4;
+          @include respond-above(sm) {
+            font-size: $fs-hero;
+          }
+          @include respond-below(sm) {
+            bottom: $e-title;
+          }
+        }
+      }
+      .e-author {
+        display: inline;
+        a{
+          @include transition(font-size 0.3s linear);
+        }
+        a:hover{
+          font-size: $fs-standard;
+        }
+      }
+
+      .e-time,
+      .e-author a {
+        color: $white;
+      }
+
+      @include respond-above(md) {
+        bottom: $v-unit-l;
+        left: 10%;
+        right: 30%;
+      }
+      @include respond-between(sm, md) {
+        bottom: $v-unit-m;
+        left: 5%;
+        right: 5%;
+      }
+      @include respond-below(sm) {
+        bottom: $v-unit;
+        left: 5%;
+        right: 5%;
+      }
+    }
+
+    @include respond-between(sm, md) {
+      flex: 0 0 109%;
+      margin-left: -$h-unit-l;
+    }
+    @include respond-below(sm) {
+      flex: 0 0 108.5%;
+      margin-left: -$h-unit;
+    }
+  }
+}

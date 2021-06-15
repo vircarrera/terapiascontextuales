@@ -1,0 +1,82 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.post-template-default{
+
+    .c-aside{
+        .e-subtitle-4{
+            color:#0B0430;
+            font-weight: 700;
+            margin-bottom: 20px;
+            @include respond-below(sm){
+                text-align: left;
+            } 
+        }
+        .e-tags{
+            li{   
+                margin-right: 20px; 
+                margin-bottom: 10px;
+                line-height: 20px;      
+            }
+
+            li a{
+                background: $primary;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            li a:hover{
+                background: $blue;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;                
+            }
+
+        }
+
+        @include respond-below(sm){
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+    }
+    .b-course-related{
+        flex: 0 0 100%;
+        @include display-flex;
+        @include flex-wrap(wrap);
+        margin-bottom: 30px;
+        .e-subtitle-2{
+            @include flex(0,0,100%);
+            color:#0B0430;
+        }
+        .--course{
+            margin-bottom: 30px;
+        }
+        @include respond-above(md){
+            padding: 0 10%;            
+        }
+        @include respond-below(sm){
+            @include display-flex;
+            @include justify-content(center);          
+        }
+    }
+    .b-articles-related{  
+        flex: 0 0 100%; 
+        @include display-flex;
+        @include flex-wrap(wrap);
+        .e-subtitle-2{
+            @include flex(0,0,100%);
+            color:#0B0430;
+        }
+        .b-little-card{
+            margin: 0 30px 10px 0;
+        }
+        @include respond-above(md){
+            padding: 0 10%;            
+        }
+    }
+}

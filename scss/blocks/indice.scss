@@ -1,0 +1,91 @@
+//
+// Vars
+//
+$indicePadding: 2px;
+$indiceLGHeight: 460px;
+$indiceMDHeight: 200px;
+$indiceSMHeight: 180px;
+$totalLectionsMarginLeft: 9%;
+//
+// Styles
+//
+
+.b-indice {
+  padding: $indicePadding;
+  border-radius: $br-thin;
+  background-color: $dark;
+  transition: all 1s;
+  overflow-y: scroll;
+
+  * {
+    line-height: $lh-standard;
+  }
+
+  .totallections {
+    position: relative;
+  }
+
+  .totallections,
+  .lection {
+    padding: $v-unit 25px;
+    color: $grey;
+    border-radius: $br-thin;
+  }
+
+  .lection {
+    @include display-flex();
+    @include justify-content(space-between);
+
+    i {
+      flex: 0 10%;
+    }
+
+    .title {
+      flex: 70%;
+      font-size: $fs-small;
+      padding-right: $h-unit-xs;
+    }
+
+    .time {
+      flex: 0 10%;
+      font-size: $fs-small;
+    }
+
+    &.one {
+      background-color: $lily-dark;
+    }
+  }
+
+  @include respond-above(md) {
+    @include flex(0, 0, 31%);
+    max-height: $indiceLGHeight;
+
+    .totallections {
+      margin-left: $totalLectionsMarginLeft;
+    }
+  }
+
+  @include respond-between(sm, md) {
+    @include flex(0, 0, 65%);
+    max-height: $indiceMDHeight;
+    position: relative;
+
+    &::before {
+      //content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background: $indiceGradient;
+    }
+  }
+
+  @include respond-below(sm) {
+    @include flex(0, 0, 100%);
+    max-height: $indiceSMHeight;
+    position: relative;
+    order: 3;
+  }
+}

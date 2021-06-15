@@ -1,0 +1,45 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-mapsite{
+
+    @include flex(0,0,68%);
+
+    .e-subtitle-4{
+        color: $white;
+        font-weight:$fw-bold;
+        margin-bottom:$v-unit-m;
+    }
+
+    .b-links{
+        column-count: 2;
+        a{        
+            .e-subtitle-4{
+                color: $lily-light;
+                font-weight:$fw-normal;
+                margin-bottom:$v-unit-xs;
+                @include transition(color 0.3s linear);
+            }
+        }
+        a:hover{
+            .e-subtitle-4{
+                color: $white;
+            }    
+        }
+    
+        @include respond-below(xs){
+            column-count: 1;
+        }
+    }
+
+    @include respond-below(lg){
+        @include flex(0,0,100%);
+        margin-bottom: $v-unit-m;
+    }
+
+}

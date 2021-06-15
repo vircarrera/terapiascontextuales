@@ -1,0 +1,146 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+.b-why {
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+
+  .c-title,
+  .claim {
+    @include flex(0, 0, 100%);
+    text-align: center;
+  }
+
+  .c-title {
+    margin-bottom: $v-unit-xl;
+  }
+
+  .e-why {
+    @include display-flex();
+    @include flex(0, 0, 24%);
+
+    .c-subtitle {
+      margin-bottom: $v-unit-l;
+      font-weight: $fw-bold;
+    }
+
+    @include respond-above(md) {
+      &:nth-child(odd) {
+        .e-image {
+          order: 2;
+        }
+        .title-text {
+          order: 1;
+          margin-bottom: $v-unit-l;
+        }
+      }
+      &:nth-child(even) {
+        .e-image {
+          margin-bottom: $v-unit-l;
+        }
+      }
+    }
+  }
+
+  .cta {
+    cursor: auto;
+  }
+
+  @include respond-above(md) {
+    @include justify-content(space-around);
+
+    .e-why {
+      @include flex-direction-column();
+      @include align-items(center);
+      margin-bottom: $v-unit-l;
+
+      .c-subtitle {
+        text-align: center;
+      }
+    }
+
+    .claim {
+      margin-top: $v-unit-m;
+    }
+    .claim:hover{
+      background: $primary;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;      
+    }
+  }
+
+  @include respond-between(sm, md) {
+    margin-left: -$h-unit-l;
+    margin-right: -$h-unit-l;
+    padding: $v-unit-l;
+
+    .e-why {
+      @include flex(0, 0, 100%);
+      @include display-flex();
+      @include justify-content(space-between);
+      @include align-items(center);
+      margin-bottom: $v-unit-l;
+
+      .e-image {
+        @include flex(0, 0, 20%);
+      }
+
+      .title-text {
+        @include flex(0, 0, 70%);
+
+        .c-subtitle {
+          margin-bottom: $v-unit-m;
+        }
+      }
+
+      &:nth-child(even) {
+        .e-image {
+          order: 2;
+        }
+        .title-text {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    background: $secondary;
+
+    .c-title,
+    .c-subtitle,
+    .claim,
+    .text {
+      color: $white;
+    }
+  }
+
+  @include respond-below(sm) {
+    @include flex-direction-column();
+    @include justify-content(center);
+    margin-left: -$h-unit;
+    margin-right: -$h-unit;
+    padding: $h-unit-l $h-unit;
+
+    .e-why,
+    .e-image {
+      margin-bottom: $h-unit-l;
+      @include display-flex;
+      @include justify-content(center);
+    }
+
+    .e-why {
+      @include flex-direction-column();
+    }
+
+    .c-subtitle {
+      text-align: left;
+    }
+  }
+}

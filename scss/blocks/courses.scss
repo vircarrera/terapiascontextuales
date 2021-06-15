@@ -1,0 +1,17 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-courses {
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+
+  @include respond-below(sm) {
+    @include justify-content(center);
+  }
+}

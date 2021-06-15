@@ -1,0 +1,58 @@
+.page-template-page-investigaciones {
+  .content {
+    @include respond-above(md) {
+      margin-top: $v-unit-xl;
+    }
+    @include respond-between(sm, md) {
+      margin-top: $v-unit-l;
+    }
+    @include respond-below(sm) {
+      margin-top: $v-unit-xl;
+    }
+
+    .e-title {
+      color: $darkest;
+      @include respond-above(sm) {
+        margin-bottom: $v-unit-l;
+      }
+      @include respond-below(sm) {
+        margin-bottom: $v-unit-m;
+      }
+    }
+
+    .e-title ~ .e-text {
+      color: $darker;
+      @include respond-above(md) {
+        margin-bottom: $v-unit-l;
+        width: 50%;
+      }
+      @include respond-between(sm, md) {
+        margin-bottom: $v-unit-m;
+      }
+      @include respond-below(sm) {
+        margin-bottom: $v-unit-l;
+      }
+    }
+
+    .e-subtitle-2 {
+      margin-bottom: $v-unit-l;
+      color: $darkest;
+    }
+    .b-university {
+      margin-bottom: $v-unit-l;
+    }
+    .row-last-post {
+      @include display-flex;
+      @include flex-wrap(wrap);
+
+      @include respond-below(sm) {
+        @include justify-content(center);
+      }
+
+      .b-little-card {
+        margin-right: $h-unit-l;
+        margin-bottom: $h-unit-l;
+      }
+    }
+  }
+}

@@ -1,0 +1,634 @@
+// vars
+$sixthreesix: 636px;
+$sixh: 600px;
+$fourninefour: 494px;
+$fouronesix: 416px;
+$threesixsix: 366px;
+$threefiveeight: 358px;
+$threefivefour: 354px;
+$twoeightsix: 286px;
+$twotwoeight: 228px;
+$worbitar: 222px;
+$twoonethree: 213px;
+$twooneone: 211px;
+$twohund: 200px;
+$oneeightfour: 184px;
+$onesevenzero: 170px;
+$onesixseven: 167px;
+$onefournine: 149px;
+$onezerosix: 106px;
+$ninetyeight: 98px;
+$eighteight: 88px;
+$eighty: 80px;
+$seventy: 70px;
+$horbitar: 49px;
+$fourtysix: 46px;
+$fourty: 40px;
+$threenine: 39px;
+$thirtyseven: 37px;
+$thirtyfive: 35px;
+$threefour: 34px;
+$threethree: 33px;
+$twentyeight: 28px;
+$twofive: 25px;
+$nineteen: 19px;
+$seventeen: 17px;
+$sixteen: 16px;
+$twelve: 12px;
+$eight: 8px;
+$six: 6px;
+$four:4px;
+$three: 3px;
+$two: 2px;
+$one: 1px;
+// styles
+
+.error404{
+    .c-content{
+        min-height: 70vh;
+        @include display-flex;
+        @include flex-direction-column;
+        @include flex-wrap(wrap);
+        @include align-items(center);
+        .e-title{
+            color: $darkest;
+            text-align: center;
+        }
+        .wrapper{
+            position: relative;
+            @include flex-center;
+            @include flex-direction-column;
+            .e-illustration{
+                background-image: url("img/content/fondo404.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                position: relative;  
+                max-height: $sixh;     
+                .e-man{
+                    position: absolute;
+                    background-image: url(img/content/señor404.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    .e-subtitle-2{
+                        color: $white;
+                        position: absolute;
+                        a{
+                            position: relative;
+                        }
+                        a::after{
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            bottom: -$eight;
+                            left: -4%;
+                            width: 105%;
+                            height: $three;
+                            border-radius: $one;
+                            background: transparent;
+                            transition: background-color 0.3s linear;
+                        }
+                        a:hover::after{
+                            background: $primary;
+                        }
+                        
+                    }
+                } //e-man
+                .e-clock{
+                    width:$h-unit-xl;
+                    height: $v-unit-xl;
+                    position: absolute;
+                    background-image: url(img/content/reloj.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    .wrapper-b{
+                        width: $four;
+                        height: 100%;
+                        position: absolute;
+                        left: 46%;
+                        animation: CLOCK 1s linear infinite;
+                        .clock-big{
+                            width: $two;
+                            height: 40%;
+                            background-image: url(img/content/manilla-g.svg);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            position: absolute;
+                            top: 50%;
+                        }                
+                    }     
+                               
+                    .wrapper-l{
+                        width: $six;
+                        height: 100%;
+                        position: absolute;
+                        left: 45%;
+                        animation: CLOCK 12s linear 1s infinite;
+                        .clock-little{
+                            width:$two;
+                            height: 20%;
+                            background-image: url(img/content/manilla-p.svg);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            position: absolute;
+                            top: 50%;
+                            left: $two;
+                        }                
+                    }
+                    @keyframes CLOCK {
+                        from {transform:rotate(0deg)}
+                        to {transform:rotate(360deg)}
+                    }
+                    .center{
+                        width: $six;
+                        height: $six;
+                        position: absolute;
+                        background-image: url(img/content/reloj-centro.svg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        top: 45%;
+                        left: 44%;               
+                    }
+                }   //e-clock      
+                .e-stars{
+                    position: absolute;                   
+                    .estrella-m{
+                        width: $v-unit;
+                        height: $v-unit;
+                        background-image: url(img/content/estrella-m.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        position: absolute;
+                        bottom: $twentyeight;
+                        right: $seventeen;
+                        animation: SEMIROTATE 1s linear 1s infinite alternate;
+                    }
+        
+                    .rayo-m{
+                        width: $thirtyseven;
+                        height: $fourtysix;
+                        background-image: url(img/content/rayo-m.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        position: absolute;
+                        top: 0;
+                        right: $unit100;
+                        animation: SEMIROTATE 1s linear 1s infinite alternate;
+                    }
+        
+                    @keyframes SEMIROTATE {
+                        from {transform:rotate(0deg)}
+                        to {transform:rotate(45deg)}
+                    }
+        
+                    .estrella-n{
+                        width: $twelve;
+                        height: $twelve;
+                        background-image: url(img/content/estrella-n.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        position: absolute;
+                        top: $six;
+                        right: $seventy;
+                        animation: SEMIROTATEO 1s linear  infinite alternate;                
+                    }
+        
+                    .rayo-r{
+                        width: $thirtyseven;
+                        height: $v-unit-m;
+                        background-image: url(img/content/rayo-r.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        position: absolute;
+                        bottom: $seventeen;
+                        left: $two;
+                        animation: SEMIROTATEO 1s linear infinite alternate;
+                    }
+        
+                    @keyframes SEMIROTATEO {
+                        from {transform:rotate(0deg)}
+                        to {transform:rotate(-45deg)}
+                    }
+        
+                    .orbita-r{
+                        width: $worbitar;
+                        height: $horbitar;
+                        border: 2px solid #FD62CE;
+                        border-radius: 100%;
+                        transform: rotate(-10deg);
+                        position: absolute;
+                        bottom: $thirtyfive;
+                        left: 10%;
+                        .estrella-m-orbita{
+                            width: $h-unit;
+                            height: $v-unit;
+                            background-image: url(img/content/estrella-m-orbita.svg);
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                            position: absolute;
+                            top: $sixteen;
+                            left: -$eight;
+                            animation: ORBITA1 3s linear infinite;
+                        }
+                        @keyframes ORBITA1 {
+                            0% {
+                                top: $sixteen;
+                                left: -$eight;
+                            }
+                            5%{
+                                top: $v-unit-xs;
+                                left: $v-unit-xs;            
+                            } 
+                            12% {
+                                top: -$two;
+                                left: $twentyeight;
+                            } 
+                            25% {
+                                top: -$eight;
+                                left: $ninetyeight;
+                            } 
+                            37%{
+                                top: -$four;
+                                left: $onesixseven;
+                            }
+                            45% {
+                                top: $v-unit-xs;
+                                left: $twohund;
+                            } 
+                            50% {
+                                top: $v-unit;
+                                left: $twooneone;
+                            } 
+                            55% {
+                                top: $twofive;
+                                left: $twohund;
+                            } 
+                            62%{
+                                top: $threethree;
+                                left: $onesixseven;
+                            }
+                            75% {
+                                top: $threenine;
+                                left: $onezerosix;
+                            } 
+                            87%{
+                                top: $threethree;
+                                left: $twentyeight;    
+                            }
+                            95%{
+                                top: $twentyeight;
+                                left: $v-unit-xs;          
+                            } 
+                            100% {
+                                top: $sixteen;
+                                left: -$eight;
+                            }
+                        }
+                    }
+                    .orbita-m{
+                        width: $twoonethree;
+                        height: $v-unit-l;
+                        border: 2px solid #975CED;
+                        border-radius: 100%;
+                        transform: rotate(-33deg);
+                        position: absolute;
+                        bottom: $fourtysix;
+                        left: 10%;
+                        .estrella-r-orbita-1{
+                            width: $h-unit;
+                            height: $v-unit;
+                            background-image: url(img/content/estrella-r-orbita-1.svg);
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                            position: absolute;
+                            animation: ORBITA2 4s linear infinite;
+                            top: $six;
+                            left: -$eight;
+                        }
+                        @keyframes ORBITA2 {
+                            0% {
+                                top: $six;
+                                left: -$eight;
+                            }
+                            5%{
+                                top: -$one;
+                                left: $three;                
+                            } 
+                            12% {
+                                top: -$six;
+                                left: $threefour;
+                            } 
+                            25% {
+                                top: -$v-unit-s;
+                                left: $eighteight;
+                            } 
+                            37%{
+                                top: -$eight;
+                                left: $onefournine;
+                            }
+                            45% {
+                                top: -$four;
+                                left: $oneeightfour;
+                            } 
+                            50% {
+                                top: $four;
+                                left: $twohund;
+                            } 
+                            55% {
+                                top: $twelve;
+                                left: $oneeightfour;
+                            } 
+                            62%{
+                                top: $seventeen;
+                                left: $onefournine;
+                            }
+                            75% {
+                                top: $nineteen;
+                                left: $eighteight;
+                            } 
+                            87%{
+                                top: $seventeen;
+                                left: $threefour;   
+                            }
+                            95%{
+                                top: $twelve;
+                                left: $three;           
+                            } 
+                            100% {
+                                top: $six;
+                                left: -$eight;
+                            }
+                        }
+                        .estrella-r-orbita-2{
+                            width: $h-unit;
+                            height: $h-unit;
+                            background-image: url(img/content/estrella-r-orbita-2.svg);
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                            position: absolute;
+                            animation: ORBITA3 5s linear infinite;
+                            top: $four;
+                            left: $twohund;
+                        }
+                        @keyframes ORBITA3 {
+                            0% {
+                                top: $four;
+                                left: $twohund;
+                            }
+                            5%{
+                                top: -$four;
+                                left: $oneeightfour;          
+                            } 
+                            12% {
+                                top: -$eight;
+                                left: $onefournine;
+                            } 
+                            25% {
+                                top: -$v-unit-s;
+                                left: $eighteight;
+                            } 
+                            37%{
+                                top: -$six;
+                                left: $threefour;
+                            }
+                            45% {
+                                top: -$one;
+                                left: $three;   
+                            } 
+                            50% {
+                                top: $six;
+                                left: -$eight;
+                            } 
+                            55% {
+                                top: $twelve;
+                                left: $three; 
+                            } 
+                            62%{
+                                top: $seventeen;
+                                left: $threefour; 
+                            }
+                            75% {
+                                top: $nineteen;
+                                left: $eighteight;
+                            } 
+                            87%{
+                                top: $seventeen;
+                                left: $onefournine;  
+                            }
+                            95%{
+                                top: $twelve;
+                                left: $oneeightfour;          
+                            } 
+                            100% {
+                                top: $four;
+                                left: $twohund;
+                            }
+                        }
+                    }
+                } //e-stars
+                
+                @include respond-above(xl){
+                    .e-subtitle-2{
+                        font-size: $twentyeight;
+                        bottom: -30%;
+                        left: 11%;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+                
+                @include respond-above(md){
+                    height: $fourninefour;
+                    width: $sixthreesix;
+                    .e-man{
+                        width: 70%;
+                        height: 50%;
+                        left: 15%;
+                        top: 20%; 
+                        .e-stars{
+                            width: 46%;
+                            height: 47%;
+                            top: -25%;
+                            left: -9%;
+                            .orbita-m{
+                                transform: scale(0.8) rotate(-33deg);
+                                left: 10%;
+                            }
+                            .orbita-r{
+                                transform: scale(0.8) rotate(-10deg);
+                                left: 10%;
+                            }
+                        }
+                        .e-subtitle-2{
+                            font-size: $fs-large;
+                            bottom: -30%;
+                            left: 11%;
+                            width: 100%;
+                            text-align: center;
+                            padding-right: $eight;
+                        }                      
+                    }
+                    .e-clock{
+                        top: 6%;
+                        left: 64%;
+                    }
+
+
+                }
+                @include respond-between(sm,md){
+                    height: $threefiveeight;
+                    width: $fouronesix;
+                    .e-man{
+                        width: 70%;
+                        height: 45%;
+                        top: 20%;
+                        left: 16%;  
+                        .e-subtitle-2{
+                            bottom: -$eighty;
+                            left: 22%;
+                            font-size: $h-unit-m;
+                        }
+                        .e-stars{
+                            width: 66%;
+                            height: 65%;
+                            top: -36%;
+                            left: -28%;
+                            .orbita-m{
+                                transform: scale(0.5) rotate(-33deg);
+                            }
+                            .orbita-r{
+                                transform: scale(0.5) rotate(-10deg);
+                            }
+                        }                        
+                    }
+                    .e-clock{
+                        transform: scale(0.8);
+                        top: 4%;
+                        left: 77%;
+                    }
+                }
+                
+                @include respond-between(xs,sm){
+                    height: $threefivefour; 
+                    width: $threesixsix;
+                    .e-man{
+                        width: 90%;
+                        height: 48%;
+                        top: 25%;
+                        left: 5%; 
+                        .e-stars{
+                            width: 79%;
+                            transform: scale(0.6);
+                            height: 82%;
+                            right: 42%;
+                            top: -47%;
+                            .orbita-m{
+                                transform: rotate(-33deg);
+                            }
+                            .orbita-r{
+                                transform: rotate(-10deg);
+                            }
+                        }  
+                        .e-subtitle-2{
+                            bottom: -$onesevenzero;
+                            color: $darkest;
+                            text-align: center;
+                            width: 100%;
+                        }                           
+                    }
+                    .e-clock{
+                        transform: scale(0.8);
+                        top: 4%;
+                        left: 77%;
+                    }
+                }
+                @include respond-below(xs){
+                    height: $twotwoeight; 
+                    width: $twoeightsix;
+                    .e-man{
+                        width: 90%;
+                        height: 48%;
+                        top: 25%;
+                        left: 5%; 
+                        .e-stars{
+                            width: 100%;
+                            transform: scale(0.5);
+                            height: 127%;
+                            left: -31%;
+                            top: -77%;
+                            .orbita-m{
+                                transform: rotate(-33deg);
+                            }
+                            .orbita-r{
+                                transform: rotate(-10deg);
+                            }
+                        }  
+                        .e-subtitle-2{
+                            bottom: -$onesevenzero;
+                            color: $darkest;
+                            text-align: center;
+                            width: 100%;
+                            position: relative;
+                            margin-top: $h-unit-m;
+                        }                           
+                    }
+                    .e-clock{
+                        transform: scale(0.6);
+                        top: -2%;
+                        left: 74%;
+                    }
+                }
+            }
+            @include respond-above(md){
+                width: 70%;
+            }
+            @include respond-below(md){
+                width: 100%;
+            }
+        }
+        @include respond-above(md){
+            margin-top: $h-unit-l;
+            .e-title{
+                margin-bottom: $unit50;
+                span{
+                    display: block;
+                }
+            }
+        }
+        @include respond-between(sm,md){
+            margin-top: $unit50;
+            .e-title{
+                margin-bottom: $fourty;
+            }
+        }
+        @include respond-below(sm){
+            margin-top: $v-unit-m;
+            justify-content: center;
+            .e-title{
+                font-size: $fs-heading;
+                margin-bottom: $v-unit-m;
+            }
+        }
+        @include respond-below(xxs){
+            min-height: 80vh;
+            justify-content: start;
+        }
+
+
+    } //c-content
+} //error 404
+
+
+

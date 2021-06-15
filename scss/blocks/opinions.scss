@@ -1,0 +1,101 @@
+//
+// Vars
+//
+$width: 234px;
+$widthS: 274px;
+$img: 200px;
+$fifty: 50px;
+$fourty: 40px;
+//
+// Styles
+//
+
+.b-opinions {
+  padding: $unit100 0 $v-unit-l 0;
+
+  .title {
+    text-align: center;
+    margin-bottom: $h-unit-l;
+  }
+
+  .e-opinions {
+    @include display-flex();
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+    .flickity-viewport{ width: 100%;}
+
+    .--opinion {
+      width: $width;
+      margin-bottom: $v-unit-s;
+      @include flex(0, 0, 30%);
+      .frame-container {
+        @include display-flex;
+        @include justify-content(center);
+        margin-bottom: $v-unit-m;
+        .frame-wrapper{
+          position: relative;
+          @include display-flex;
+          @include justify-content(center);
+          width:  $img;
+          .frame {
+            border-radius: 100%;
+            overflow: hidden;
+
+            img {
+              height: $img;
+              width: $img;
+              object-fit: cover;
+            }
+          }
+          .illustration{
+            width: $fifty;
+            height: $fifty;
+            position: absolute;
+            background-image: url("img/content/comillas.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            bottom: $v-unit-m;
+            right: 0;
+          }          
+        }
+
+      }
+
+      .e-subtitle-4 {
+        color: $darkest;
+        text-align: center;
+        margin-bottom: $v-unit-s;
+      }
+
+      .e-job {
+        font-size: $fs-read;
+        background: $primary;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        margin-bottom: $h-unit-m;
+      }
+
+      .e-text {
+        color: $darker;
+        text-align: center;
+      }
+
+      @include respond-above(sm) {
+        @include flex(0, 0, 30%);
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    .title {
+      margin-bottom: $fifty;
+    }
+    padding: $unit100 0 $fifty 0;
+    .--opinion{
+      width: $widthS;
+      padding: 0 20px;
+    }
+  }
+}

@@ -1,0 +1,157 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-apreciations {
+  .comentarios {
+    .comentarios__titulo,
+    .comentarios__titulo-entrada {
+      font-size: 20px;
+      color: #293537;
+    }
+
+    .comentarios__titulo,
+    .comentarios__titulo-entrada,
+    .logged-in-as {
+      margin-bottom: $v-unit-l;
+    }
+
+    .comment-body {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .comment-author {
+      height: 70px;
+
+      img {
+        border-radius: 100%;
+      }
+    }
+
+    .comment-author img {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+    }
+
+    .fn {
+      position: absolute;
+      left: 80px;
+      top: 15px;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    .says {
+      display: none;
+    }
+
+    .comment-meta {
+      position: absolute;
+      left: 80px;
+      top: 40px;
+      font-size: 14px;
+    }
+
+    .comment-body p {
+      background-color: $white;
+      border-radius: $br-thin;
+      padding: $v-unit-m;
+      margin-left: 80px;
+    }
+
+    .reply {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    .reply a {
+      font-size: $fs-small;
+      font-weight: bold;
+      background: $primary;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .children {
+      margin-left: 70px;
+      margin-top: -30px;
+    }
+
+    .children .comment-author {
+      border-color: #1fc1db;
+    }
+
+    .comentarios__mensaje,
+    .nombre,
+    .email,
+    .web {
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 20px;
+      font-size: 16px;
+      font-family: $ff-main;
+      outline: none;
+      resize: none;
+      border-radius: $br-thin;
+    }
+
+    .nombre,
+    .email {
+      padding: 15px 20px;
+    }
+
+    // input[type="image"] {
+    //   display: none;
+    // }
+
+    .comentarios__mensaje:focus,
+    .comentarios__nombre:focus,
+    .comentarios__email:focus,
+    .comentarios__web:focus {
+      border-color: #1fc1db;
+    }
+
+    .cta.cta-button {
+      width: 100%;
+      background-color: #1fc1db;
+      color: white;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 30px;
+      &:hover {
+        background-position-y: -50px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  @include respond-above(md) {
+    &.--course {
+      margin-top: $v-unit-l;
+      @include flex(0, 0, 60%);
+    }
+  }
+  @include respond-between(sm, md) {
+    &.--course {
+      margin-top: -50px;
+    }
+  }
+
+  @include respond-below(sm) {
+    &.--course {
+      margin-top: $v-unit-l;
+      @include flex(0, 0, 100%);
+    }
+  }
+}
